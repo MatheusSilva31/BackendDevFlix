@@ -10,7 +10,7 @@ import { MoviesModule } from './movies/movies.module';
     ConfigModule.forRoot(),
     MoviesModule,
     MongooseModule.forRoot(
-      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.zk1kh.mongodb.net/movies?retryWrites=true&w=majority`,
+      `${process.env.MONGOBASEURL}://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}${process.env.DATABASE_URL}`,
     ),
   ],
   controllers: [AppController],
